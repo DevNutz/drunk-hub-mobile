@@ -15,10 +15,12 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.devnutz.drunkhub.ui.theme.DrunkhubTheme
 
 @Composable
-fun HomeScreen(modifier: Modifier = Modifier) {
+fun HomeScreen( navController: NavController, modifier: Modifier = Modifier) {
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -69,7 +71,9 @@ fun HomeScreen(modifier: Modifier = Modifier) {
         Spacer(modifier = Modifier.weight(1f))
 
         Button(
-            onClick = { /* Navigate to game screen */ },
+            onClick = {
+                navController.navigate("select_game")
+            },
             modifier = Modifier.align(Alignment.CenterHorizontally)
         ) {
             Text(text = "Go to Game Screen")
@@ -83,6 +87,6 @@ fun HomeScreen(modifier: Modifier = Modifier) {
 @Composable
 fun HomeScreenPreview() {
     DrunkhubTheme {
-        HomeScreen()
+        HomeScreen(navController = rememberNavController())
     }
 }
