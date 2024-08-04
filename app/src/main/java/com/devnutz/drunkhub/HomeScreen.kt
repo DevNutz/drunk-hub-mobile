@@ -15,7 +15,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.devnutz.drunkhub.ui.theme.DrunkhubTheme
+import com.devnutz.drunkhub.ui.theme.AppTheme
 
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
@@ -63,7 +63,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                 contentDescription = "Settings"
             )
         }
-    }
+        }
 
         // Button to navigate to game screen
         Spacer(modifier = Modifier.weight(1f))
@@ -72,7 +72,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
             onClick = { /* Navigate to game screen */ },
             modifier = Modifier.align(Alignment.CenterHorizontally)
         ) {
-            Text(text = "Go to Game Screen")
+            Text(text = "Go to Game Screen Modified")
         }
 
         Spacer(modifier = Modifier.weight(1f))
@@ -82,7 +82,7 @@ fun HomeScreen(modifier: Modifier = Modifier) {
 @Preview(showBackground = true)
 @Composable
 fun HomeScreenPreview() {
-    DrunkhubTheme {
+    AppTheme {
         HomeScreen()
     }
 }
